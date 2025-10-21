@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
-*  {
+* {
   font-family: 'Poppins', cursive;
   box-sizing: border-box;
 }
@@ -22,14 +22,14 @@ body {
   gap: 5px;
 }
 
-/* --- Animasi glow bergantian looping + jeda --- */
+/* === Efek Glow Bergantian dengan Jeda Loop === */
 .greetings > span {
   color: #111;
   text-shadow: none;
-  animation: glowLoop 3s ease-in-out infinite;
+  animation: glowLoop 4s ease-in-out infinite;
 }
 
-/* delay supaya huruf nyala bergantian */
+/* Delay antar huruf supaya menyala berurutan */
 .greetings > span:nth-child(1){ animation-delay: 0s; }
 .greetings > span:nth-child(2){ animation-delay: 0.3s; }
 .greetings > span:nth-child(3){ animation-delay: 0.6s; }
@@ -39,31 +39,32 @@ body {
 .greetings > span:nth-child(7){ animation-delay: 1.8s; }
 .greetings > span:nth-child(8){ animation-delay: 2.1s; }
 
+/* Keyframes untuk nyala, glow, dan stay */
 @keyframes glowLoop {
-  0%, 10% {
+  0%, 15% {
     color: #111;
     text-shadow: none;
   }
-  20%, 60% {
+  25%, 60% {
     color: #fff;
     text-shadow: 0 0 15px #ff4da6, 0 0 40px #ff4da6, 0 0 80px #ff4da6;
   }
   70%, 100% {
-    color: #fff;
-    text-shadow: 0 0 10px #ff4da6, 0 0 25px #ff4da6, 0 0 50px #ff4da6;
+    color: #111;
+    text-shadow: none;
   }
 }
 
-/* Tambahkan jeda global agar semua huruf berhenti glow sebentar */
+/* Tambahkan jeda global agar semua huruf tetap menyala sebentar sebelum restart */
 .greetings {
-  animation: hold 6s infinite;
+  animation: hold 5s infinite;
 }
 
 @keyframes hold {
-  0%, 80% {
+  0%, 85% {
     filter: brightness(1);
   }
-  81%, 100% {
+  86%, 100% {
     filter: brightness(1);
   }
 }
@@ -88,7 +89,7 @@ body {
     display: block;
     font-size: 3rem;
     font-weight: 500;
-        text-align: center;
+    text-align: center;
   }
   .description {
     font-size: 1rem;
