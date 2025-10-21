@@ -315,19 +315,27 @@
     </div>
     <script src="main.js"></script>
     <script>
-  const text = "I love u";
+ const text = "I love u";
   const speed = 200; // kecepatan ketik per huruf (ms)
   let i = 0;
 
   function typeEffect() {
+    const target = document.getElementById("typewriter");
     if (i < text.length) {
-      document.getElementById("typewriter").textContent += text.charAt(i);
+      target.textContent += text.charAt(i);
       i++;
       setTimeout(typeEffect, speed);
     }
   }
 
-  // Mulai animasi saat halaman dimuat
+  // Mulai animasi setelah bunga muncul
+  window.onload = () => {
+    const loveText = document.querySelector(".love-text");
+    setTimeout(() => {
+      loveText.classList.add("show"); // tampilkan teks
+      typeEffect(); // mulai animasi ketikan
+    }, 1500); // delay 3.5 detik agar muncul setelah bunga
+  };
   window.onload = typeEffect;
 </script>
   </body>
