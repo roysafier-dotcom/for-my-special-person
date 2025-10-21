@@ -8,6 +8,7 @@
     <link rel="icon" href="img/flowers.png" type="image/x-icon">
     <title>Flowers</title>
 </head>
+    
 <body>
     <div class="greetings">
     <!-- silahkan menambah kata sesuai keinginan dengan <span>text...</span -->
@@ -29,5 +30,11 @@
         </button>
         
     </div>
+    <script>
+  // Aktifkan glow pink setelah intro selesai (~3 detik)
+  setTimeout(() => {
+    document.querySelector('.greetings').classList.add('ready');
+  }, 3000);
+</script>
 </body>
 </html>
