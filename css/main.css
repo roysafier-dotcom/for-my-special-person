@@ -1321,26 +1321,14 @@ body {
 }/*# sourceMappingURL=main.css.map */
 .love-text {
   position: absolute;
-  bottom: 25vh;
-  font-size: 6vmin;
-  font-family: "Poppins", sans-serif;
-  color: #ff99cc;
-  text-shadow: 0 0 15px #ff66aa, 0 0 30px #ff99cc;
-  opacity: 0;
-  animation: show-love 3s ease-in-out 6s forwards;
-}
-
-@keyframes show-love {
-  0% {
-    opacity: 0;
-    transform: scale(0.8) translateY(50px);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.1) translateY(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff69b4; /* pink neon */
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 40px #ff69b4;
+  white-space: nowrap;
+  font-family: 'Poppins', cursive;
+  letter-spacing: 3px;
 }
