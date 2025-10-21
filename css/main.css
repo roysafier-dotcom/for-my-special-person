@@ -1331,4 +1331,7 @@ body {
   white-space: nowrap;
   font-family: 'Poppins', cursive;
   letter-spacing: 3px;
+  z-index: 1000; /* ✨ penting: agar teks di atas bunga */
+  pointer-events: none; /* agar tidak menghalangi animasi bunga */
 }
+
