@@ -1319,19 +1319,3 @@ body {
   -webkit-animation-play-state: paused !important;
           animation-play-state: paused !important;
 }/*# sourceMappingURL=main.css.map */
-.love-text {
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #ff69b4; /* pink neon */
-  text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 40px #ff69b4;
-  white-space: nowrap;
-  font-family: 'Poppins', cursive;
-  letter-spacing: 3px;
-  z-index: 1000; /* ✨ penting: agar teks di atas bunga */
-  pointer-events: none; /* agar tidak menghalangi animasi bunga */
-}
-
