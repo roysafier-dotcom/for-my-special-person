@@ -308,5 +308,21 @@
       </div>
     </div>
     <script src="main.js"></script>
+    <script>
+  const text = "I love u";
+  const speed = 200; // kecepatan ketik per huruf (ms)
+  let i = 0;
+
+  function typeEffect() {
+    if (i < text.length) {
+      document.getElementById("typewriter").textContent += text.charAt(i);
+      i++;
+      setTimeout(typeEffect, speed);
+    }
+  }
+
+  // Mulai animasi saat halaman dimuat
+  window.onload = typeEffect;
+</script>
   </body>
 </html>
