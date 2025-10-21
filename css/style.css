@@ -1,96 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
-* * {
-    font-family: 'Poppins', cursive;
-    box-sizing: border-box;
+*  {
+  font-family: 'Poppins', cursive;
+  box-sizing: border-box;
 }
 
 body {
-    color: azure;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
+  color: azure;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
 }
 
 .greetings {
-    font-size: 6rem;
-    font-weight: 900;
+  font-size: 6rem;
+  font-weight: 900;
+  display: flex;
+  gap: 5px;
 }
 
-/* --- 1️⃣ Animasi awal: muncul satu per satu --- */
+/* --- Animasi glow bergantian looping + jeda --- */
 .greetings > span {
-    opacity: 0;
-    animation: appear 2s ease-in-out forwards;
+  color: #111;
+  text-shadow: none;
+  animation: glowLoop 3s ease-in-out infinite;
 }
 
-/* huruf muncul bergantian */
+/* delay supaya huruf nyala bergantian */
 .greetings > span:nth-child(1){ animation-delay: 0s; }
-.greetings > span:nth-child(2){ animation-delay: 0.2s; }
-.greetings > span:nth-child(3){ animation-delay: 0.4s; }
-.greetings > span:nth-child(4){ animation-delay: 0.6s; }
-.greetings > span:nth-child(5){ animation-delay: 0.8s; }
-.greetings > span:nth-child(6){ animation-delay: 1.0s; }
-.greetings > span:nth-child(7){ animation-delay: 1.2s; }
-.greetings > span:nth-child(8){ animation-delay: 1.4s; }
+.greetings > span:nth-child(2){ animation-delay: 0.3s; }
+.greetings > span:nth-child(3){ animation-delay: 0.6s; }
+.greetings > span:nth-child(4){ animation-delay: 0.9s; }
+.greetings > span:nth-child(5){ animation-delay: 1.2s; }
+.greetings > span:nth-child(6){ animation-delay: 1.5s; }
+.greetings > span:nth-child(7){ animation-delay: 1.8s; }
+.greetings > span:nth-child(8){ animation-delay: 2.1s; }
 
-@keyframes appear {
-    0% {
-        opacity: 0;
-        transform: scale(0.5);
-        color: #111;
-        text-shadow: none;
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-        color: #fff;
-        text-shadow: 0 0 12px #ff4da6, 0 0 50px #ff4da6, 0 0 100px #ff4da6;
-    }
+@keyframes glowLoop {
+  0%, 10% {
+    color: #111;
+    text-shadow: none;
+  }
+  20%, 60% {
+    color: #fff;
+    text-shadow: 0 0 15px #ff4da6, 0 0 40px #ff4da6, 0 0 80px #ff4da6;
+  }
+  70%, 100% {
+    color: #fff;
+    text-shadow: 0 0 10px #ff4da6, 0 0 25px #ff4da6, 0 0 50px #ff4da6;
+  }
 }
 
-/* --- 2️⃣ Glow pink serentak setelah semua huruf muncul --- */
-@keyframes glow {
-    0%, 100% {
-        color: #fff;
-        text-shadow: 0 0 12px #ff4da6, 0 0 50px #ff4da6, 0 0 100px #ff4da6;
-    }
-    50% {
-        color: #ffb3d9;
-        text-shadow: 0 0 5px #ff4da6, 0 0 25px #ff4da6, 0 0 60px #ff4da6;
-    }
+/* Tambahkan jeda global agar semua huruf berhenti glow sebentar */
+.greetings {
+  animation: hold 6s infinite;
 }
 
-/* --- 3️⃣ Kelas aktif setelah intro selesai --- */
-.greetings.ready > span {
-    animation: glow 2s ease-in-out infinite;
+@keyframes hold {
+  0%, 80% {
+    filter: brightness(1);
+  }
+  81%, 100% {
+    filter: brightness(1);
+  }
 }
 
-/* --- Deskripsi & tombol --- */
 .description {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+
+.button {
+  margin-top: 30px;
 }
 
 .button a {
-    text-decoration: none;
-    font-size: 1rem;
-    color: #111;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #111;
 }
 
 @media screen and (max-width:574px) {
-    .greetings {
-        display: block;
-        font-size: 3rem;
-        font-weight: 500;
+  .greetings {
+    display: block;
+    font-size: 3rem;
+    font-weight: 500;
         text-align: center;
-    }
-    .description {
-        font-size: 1rem;
-    }
-    .button a {
-        font-size: 0.5rem;
-    }
+  }
+  .description {
+    font-size: 1rem;
+  }
+  .button a {
+    font-size: 0.5rem;
+  }
 }
